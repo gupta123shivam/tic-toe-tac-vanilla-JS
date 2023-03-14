@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Shivam Gupta" />
+  <meta name="description" content="A Tic-Tac-Toe Game in vanilla JS" />
+
+ <!-- ======================= STYLES =============== -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/config.css">
+  <link rel="stylesheet" href="assets/css/game.css">
+
+  <title>Tic-Tac-Toe</title>
+</head>
+<body>
+
+  <!-- ================= BACKDROP ==================== -->
+  <div id="backdrop"></div>
+
+  <header class="header">
+    <h1>Play Tic-Tac-Toe</h1>
+    <p>Built with HTML, CSS, vanilla JS</p>
+  </header>
+  <main>
+
+   <!-- ======================== OVERLAY ============================== -->
+    <aside>
+      <div class="modal" id="config-overlay">
+        <h2>Choose your name:</h2>
+
+        <form action="#" class="modal__form grid" id="modal-form">
+          <div class="form__control">
+            <label for="player-name">Player Name: </label>
+            <input type="text" name="player-name" placeholder="Smith" id="player-name" autocomplete>
+          </div>
+          <p class="message">
+            
+          </p>
+          <div class="form__control">
+            <button type="reset" class="btn modal__button-cancel">Cancel</button>
+            <button type="submit" class="btn btn-alt modal__button-confirm">Confirm</button>
+          </div>
+        </form>
+      </div>
+    </aside>
+
+   <!-- ====================== GAME CONFIG ================= -->
+    <section id="game-config">
+      <ol class="player__list grid" id="player-list">
+        <li class="player__data grid" id="player-1">
+ 
+            <h2>Player 1</h2>
+            <h3>PLAYER NAME</h3>
+            <p>X</p>
+            <button class="btn edit__button-1" data-playerid="1">Edit</button>  <!-- Overlay activating BUTTON  -->
+
+        </li>
+        <li class="player__data grid" id="player-2">
+            <h2>Player 2</h2>
+            <h3>PLAYER NAME</h3>
+            <p>O</p>
+            <button class="btn edit__button-2" data-playerid="2">Edit</button>
+
+        </li>
+      </ol>
+      
+     <!-- START BUTTON  -->
+     <button class="btn btn-alt start__button" id="start-button">Start new Game</button>
+    
+    </section>
+
+    <!-- ====================== ACTIVE GAME ================= -->
+    <section id="active-game">
+
+    <!-- =======================  WINNER BANNER ====================== -->
+      <article class="winner__banner">
+        <h3>You Won! <span id="winner-name"></span></h3>
+        <p>Click "Start new Game" to start new Game</p>
+      </article> 
+
+      <p>Its your turn <span class="active-player-name">PLAYER NAME</span>!</p>
+     <!-- ===================== GAME BOARD ======================= -->
+      <ol class="gameboard" id="game-board">
+        <li class="board__point" data-num="1"></li>
+        <li class="board__point" data-num="2"></li>
+        <li class="board__point" data-num="3"></li>
+
+        <li class="board__point" data-num="4"> </li>
+        <li class="board__point" data-num ="5"></li>
+        <li class="board__point" data-num="6"></li>
+
+        <li class="board__point" data-num="7"></li>
+        <li class="board__point" data-num="8"></li>
+        <li class="board__point" data-num="9"></li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- ======================= config JS ===================== -->
+  <script src="assets/js/config.js" defer></script>
+
+  <!-- ======================= GAME JS ===================== -->
+  <script src="assets/js/game.js" defer></script>
+
+  <!-- ======================= APP JS ===================== -->
+  <script src="assets/js/app.js" defer></script>
+
+
+
+  
+</body>
+</html>

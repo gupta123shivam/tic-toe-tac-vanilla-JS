@@ -1,0 +1,32 @@
+/* ===================== CONFIG OVERLAY ====================== */
+#config-overlay{
+  text-align: center;
+}
+
+#config-overlay h2{
+  margin: 0.5rem 0;
+}
+
+.form__control{
+  margin: 0.5rem 0;
+}
+
+.form__control label{
+  display: block;
+  color: var(--title-color);
+  margin-bottom: 0.5rem;
+  font-size: var(--h2-font-size);
+}
+
+.form__control input{
+  width: 15rem;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  padding: 0.25rem 0.5rem;
+}
+
+.form__control:nth-of-type(2){
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+}

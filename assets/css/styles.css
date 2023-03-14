@@ -1,0 +1,238 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root{
+
+  /*========== Colors ==========*/
+  --title-color: #0B0A0A;
+  --text-color: #8a6f6f;
+  --text-color-light: #cfbfbf;
+  --container-color: #e2d4d4;
+  --container-color-alt: #ffffff;
+  --body-color: #ffffff;
+  --highlight-color: #dfbebe;
+  --modal-color: #db8b8b;
+  --modal-background-color: #403A3A;
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Roboto', sans-serif;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .875rem;
+  --smaller-font-size: .813rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;  
+
+    /*========== z-index ==========*/
+    --z-tooltip: 100;
+}
+
+/*========== BASE ==========*/
+*, 
+*::before, 
+*::after{
+  box-sizing: border-box;
+}
+
+html{ 
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  min-width: 30rem;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--body-color);
+}
+
+h1, h2, h3, ul, ol, p{
+  margin: 0;
+}
+
+h1, h2, h3{
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul{
+  list-style-type: none;
+  padding: 0; 
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+img{
+  max-width: 100%; /* to avoid overflow of image */
+  height: auto;
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme{
+  --title-color: #f2f2f2;
+  --text-color: #bfbfbf;
+  --text-color-light: #d1c9c9;
+  --container-color: #212121;
+  --container-color-alt: #181616;
+  --body-color: #2b2b2b;
+}
+
+/*========== Button Dark/Light ==========*/
+.change-theme{
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.change-theme:hover{
+  color: var(--title-color);
+}
+
+/* ===================== Reusable CSS Classes ================= */
+.grid{
+  display: grid;
+}
+
+/* ================= HEADER ================== */
+.header{
+  background-color: var(--container-color);
+  color: var(--title-color);
+  text-align: center;
+  padding-block: 2rem;
+}
+
+/* ================== /BUTTON ============== */
+.btn{
+  font-family: inherit;
+  padding: 0.5rem 1.5rem;
+  font-size: var(--normal-font-size);
+  color: var(--text-color-light);
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  background-color: var(--container-color-alt);
+  box-shadow: 2px 5px 15px rgb(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover{
+  color: var(--text-color);
+  transform : translateY(3px) ;
+  cursor: pointer;
+}
+
+.btn-alt{
+  background-color: var(--highlight-color);
+  color: var(--text-color);
+}
+
+.btn-alt:hover{
+  color: var(--title-color);
+}
+
+main{
+  width: 100%;
+  height: 100%;
+}
+
+/* =============== OVERLAY ====================== */
+.modal{
+  position: fixed;
+  top: 20%;
+  left: 5%;
+  justify-self: center;
+  padding: 1rem;
+  background-color: var(--modal-color);
+  border-radius: 6px;
+  box-shadow: 2px 5px 8px rgb(0, 0, 0, 0.2);
+  display: none;
+}
+
+#backdrop{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+}
+
+.show-modal{
+  display: initial;
+}
+
+@media screen and (min-width: 20rem){
+  .modal{
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
+
+.message{
+  font-size: 0.75rem;
+}
+
+.message.error{
+  color: rgb(230, 49, 4);
+  font-size: 1.5rem;
+}
+/* ================ GAME CONFIG =================== */
+#game-config{
+  width: 90%;
+  max-width: 40rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.player__list{
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+}
+
+.player__data{
+  row-gap: 0.5rem;
+  background-color: var(--container-color);
+  border-radius: 10px;
+  box-shadow: 2px 5px 8px rgb(0, 0, 0, 0.2);
+}
+
+.player__data h2{
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+
+.player__data p{
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.edit__button-1,
+.edit__button-2{
+  width:max-content;
+  margin-inline: auto;
+  margin-top: 0.5rem;
+}
+
+.start__button{
+  margin-inline: auto;
+  margin-top: 1.5rem;
+}
+
+ /* ====================== ACTIVE GAME =================  */
